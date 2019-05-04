@@ -1,0 +1,8 @@
+---
+version: '3.7'
+
+services:
+  scheduler:
+    image: nralbers/scheduler
+    volumes:
+    - ./test.sh:/etc/periodic/1min/test

@@ -21,4 +21,4 @@ The image has bash, bind-tools, git & openssh installed. To use: bind mount the 
 RUN apk update && apk add bash bind-tools openssh git
 RUN mkdir -p /etc/periodic/1min && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 RUN mkdir -p /etc/periodic/5min && echo "*/5     *       *       *       *       run-parts /etc/periodic/5min" >> /etc/crontabs/root
-ENTRYPOINT ["crond", "-f"]
+ENTRYPOINT ["crond", "-f", "-d 8"]

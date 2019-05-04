@@ -29,11 +29,11 @@ The image has the following extra utilities installed on top of the base alpine 
 `docker-compose.yml`
 ```yaml
 ---
-version: 3.7
+version: '3.7'
 
 services:
   scheduler:
     image: nralbers/scheduler
     volumes:
-    - ./runevery5min.sh:/etc/periodic/runevery5min
+    - ./test.sh:/etc/periodic/1min/test
 ```
