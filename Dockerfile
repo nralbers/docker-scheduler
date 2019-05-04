@@ -18,7 +18,7 @@ LABEL maintainer="nralbers@gmail.com"
 LABEL version="1.0"
 LABEL description="Image running crond with additional schedule options for /etc/periodic/1min and /etc/periodic/5min. \
 The image has bash, bind-tools, git & openssh installed. To use: bind mount the scripts you want to schedule to /etc/periodic/<period>"
-RUN apk update && apk add bash bind-tools openssh git
+RUN apk update && apk add bash bind-tools openssh git curl rsync
 RUN mkdir -p /etc/periodic/1min && echo "*       *       *       *       *       run-parts /etc/periodic/1min" >> /etc/crontabs/root
 RUN mkdir -p /etc/periodic/5min && echo "*/5     *       *       *       *       run-parts /etc/periodic/5min" >> /etc/crontabs/root
-ENTRYPOINT ["crond", "-f", "-d 8"]
+ENTRYPOINT ["crond", "-f", "-d", "8"]
