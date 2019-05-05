@@ -21,8 +21,10 @@ The image has the following extra utilities installed on top of the base alpine 
 
 - bash
 - bind-utils
+- curl
 - git
 - openssh
+- rsync
 
 # Example 
 
